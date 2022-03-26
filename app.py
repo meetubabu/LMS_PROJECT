@@ -4,8 +4,9 @@ import lms_engine
 # ONE Customer Data Unit Test
 l_CustName="AAA"
 l_CustCreditScore=333
-l_CustReqLoanAmount=5000
-"""
+l_CustReqLoanAmount=23500
+
+lms_engine.check_eligibility(lms_md.lms_md,l_CustName,l_CustCreditScore,l_CustReqLoanAmount)
 lms_engine.engine(lms_md.lms_md,l_CustName,l_CustCreditScore,l_CustReqLoanAmount)
 
 # Many Cust Unit Test
@@ -24,7 +25,6 @@ customers  = [{ "CustName":"AAA"
   ]
   
 for c1 in customers:
+    lms_engine.check_eligibility(lms_md.lms_md,c1["CustName"],c1["CustCreditScore"],c1["CustReqLoanAmount"])
+    
     lms_engine.engine(lms_md.lms_md,c1["CustName"],c1["CustCreditScore"],c1["CustReqLoanAmount"])
-"""
-lms_engine.check_eligibility(lms_md.lms_md,l_CustName,l_CustCreditScore,l_CustReqLoanAmount)
-
